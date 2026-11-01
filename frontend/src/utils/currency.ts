@@ -39,3 +39,4 @@ export function formatCurrency(amount: number, currencyCode: string = 'USD', dec
     
   return isNegative ? `-${sym}${formatted}` : `${sym}${formatted}`
 }
+
