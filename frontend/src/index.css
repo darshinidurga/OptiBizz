@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-charcoal-900 text-slate-200 antialiased selection:bg-emerald-500/20 selection:text-emerald-300;
+  }
+  * { box-sizing: border-box; }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-charcoal-800/85 backdrop-blur-md border border-white/[0.08] rounded-2xl shadow-xl transition-all duration-200;
+  }
+  .glass-card-interactive {
+    @apply glass-card hover:border-white/[0.16] hover:shadow-2xl hover:bg-charcoal-800;
+  }
+  .btn-primary {
+    @apply bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600
+           text-white font-medium rounded-xl px-5 py-2.5 transition-all
+           duration-150 flex items-center justify-center gap-2 text-sm shadow-md shadow-emerald-500/20 active:scale-[0.99];
+  }
+  .btn-ghost {
+    @apply bg-charcoal-750/70 hover:bg-charcoal-700 active:bg-charcoal-600 border border-white/[0.1]
+           text-slate-300 hover:text-white rounded-xl px-4 py-2 transition-all
+           duration-150 text-sm flex items-center justify-center gap-2;
+  }
+  .input-field {
+    @apply w-full bg-charcoal-750/90 border border-white/[0.1] rounded-xl px-4 py-2.5
+           text-white text-sm placeholder:text-slate-500 focus:outline-none
+           focus:border-emerald-500/60 focus:ring-2 focus:ring-emerald-500/20
+           transition-all duration-150;
+  }
+  .metric-card {
+    @apply glass-card p-5 flex flex-col gap-1.5 relative overflow-hidden;
+  }
+  .section-title {
+    @apply text-[11px] font-semibold text-slate-400 uppercase tracking-wider;
+  }
+  .tag-increase  { @apply text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 text-xs px-2.5 py-0.5 rounded-full font-medium inline-flex items-center gap-1; }
+  .tag-decrease  { @apply text-rose-400 bg-rose-500/10 border border-rose-500/25 text-xs px-2.5 py-0.5 rounded-full font-medium inline-flex items-center gap-1; }
+  .tag-maintain  { @apply text-slate-300 bg-slate-500/10 border border-slate-500/25 text-xs px-2.5 py-0.5 rounded-full font-medium inline-flex items-center gap-1; }
+
+  .shadow-card {
+    box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.35);
+  }
+  .shadow-glow-emerald {
+    box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.25);
+  }
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-white/10 hover:bg-white/20 rounded-full; }
